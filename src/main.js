@@ -22,4 +22,22 @@ me = {
   "copyright": "Contents of this site are © Copyright 2019-2020 Ryan Cross. All rights reserved. <a href='https://github.com/RyanCross/ryancross.github.io' title='ryancross.github.io' target='_blank'>Source </a> code is available under the MIT license."
 }
 
+function renderBody() {
+  // creates a new body and overide what's in index.html
+  let htmlBody = document.createElement('body');
+  document.body = htmlBody;
+
+  let fullNameHeader = document.createElement('h1');
+  fullNameHeader.setAttribute("id", "name-header")
+  fullNameHeader.append(`${me.basics.firstName} ${me.basics.lastName}`);
+
+  let supremeImg = document.createElement('img');
+  supremeImg.setAttribute('src', "src/img/supreme.png" );
+
+  htmlBody.appendChild(fullNameHeader);
+  htmlBody.appendChild(supremeImg);
+}
+
+document.body.onload = renderBody();
+
 console.log(me);
