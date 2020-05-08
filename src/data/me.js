@@ -1,4 +1,5 @@
-module.exports.me = {
+// modules are subject to the same-origin policy, so while this site is being statically served from the filesystem, can't use it.
+export default {
   "basics": {
     "firstName":"Ryan",
     "lastName": "Cross",
