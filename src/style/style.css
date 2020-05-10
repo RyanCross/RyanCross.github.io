@@ -1,4 +1,53 @@
+/**
+* Palette 
+* Neutral Grey - #CFCFCD
+* Vermillion - #E3170A
+* Star Command Blue - #2980B9
+* Sky Blue - #6DD5FA
+* White - #FFFFFF
+* Darkest Neutral Gray - #1A1A1A
+* Black - #000000
+**/
+
+/**
+font-family: 'Sawarabi Gothic', sans-serif;
+font-family: 'Sawarabi Mincho', sans-serif;
+font-family: 'Open Sans', sans-serif;
+**/ 
+
+/* Import Open Sans (reg/bold), Sarawabi Gothic, Sarawabi Mincho */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Sawarabi+Gothic&family=Sawarabi+Mincho&display=swap');
+
+body {
+  color: #1A1A1A;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+#nav {
+  background: #DFDFDF;
+}
+
+#nav-home {
+  color: #1A1A1A;
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.nav-item {
+  margin: 20px;
+  padding: 5px;
+  color: #2980B9;
+  font-family: 'Sawarabi Gothic';
+}
+
 img {
   width: 200px;
   height: 250px;
+}
+
+/* ignore this for now, this will be a sky gradient */
+background {
+  background: #2980B9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

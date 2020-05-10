@@ -36,7 +36,7 @@ meLoremIpsum = {
   }
 }
 
-headerLabels = {
+nav = {
   projects: "Projects",
   resume: "Resume",
   contact: "Contact",
@@ -80,18 +80,29 @@ function renderHeader() {
   let header = document.createElement('div');
   header.setAttribute("id", "header");
 
-  let headerElements = [];
-  
-  for(label in headerLabels) {
-    element = document.createElement('span');
-    element.setAttribute('class', 'header-btn');
-    element.setAttribute('id', `${headerLabels[label]}`);
-    element.append(`${headerLabels[label]}`);
+  let navBar = document.createElement('div');
+  navBar.setAttribute("id", "nav");
 
-    headerElements.push(element);
+  let homeLabel = document.createElement('span');
+  homeLabel.setAttribute("id", "nav-home");
+  homeLabel.setAttribute("class", "nav-item");
+  homeLabel.append(`${me.basics.firstName} ${me.basics.lastName}`);
+
+  let navBarElements = [];
+  for(label in nav) {
+    element = document.createElement('span');
+    element.setAttribute('class', 'nav-btn');
+    element.setAttribute('class', 'nav-item');
+    element.setAttribute('id', `${nav[label]}`);
+    element.append(`${nav[label]}`);
+
+    navBarElements.push(element);
   }
 
-  headerElements.forEach(element => header.appendChild(element))
+  navBar.appendChild(homeLabel);
+  navBarElements.forEach(element => navBar.appendChild(element));
+  header.appendChild(navBar);
+
   return header;
 }
 
