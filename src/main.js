@@ -48,17 +48,12 @@ function renderBody() {
   let htmlBody = document.createElement('body');
   document.body = htmlBody;
 
-
   let fullNameTitle = document.createElement('h1');
-  fullNameTitle.setAttribute("id", "name-title")
+  fullNameTitle.setAttribute('id', 'name-title');
   fullNameTitle.append(`${me.basics.firstName} ${me.basics.lastName}`);
-
-  let supremeImg = document.createElement('img');
-  supremeImg.setAttribute('src', "src/img/supreme.png" );
   
   htmlBody.appendChild(renderHeader());
-  htmlBody.appendChild(fullNameTitle);
-  htmlBody.appendChild(supremeImg);
+  htmlBody.appendChild(renderMainContent());
   htmlBody.appendChild(renderFooter());
 }
 
@@ -81,9 +76,37 @@ function renderHeader() {
   return header;
 }
 
+function renderMainContent() {
+  let mainContent = document.createElement('div');
+  mainContent.setAttribute('id', 'main-content');
+
+  let p1 = document.createElement('div');
+  p1.setAttribute('class', 'intro-paragraph');
+  p1.append(`${meLoremIpsum.about.paragraphOne}`);
+
+  let p2 = document.createElement('div');
+  p2.setAttribute('class', 'intro-paragraph');
+  p2.append(`${meLoremIpsum.about.paragraphTwo}`);
+
+  let p3 = document.createElement('div');
+  p3.setAttribute('class', 'intro-paragraph');
+  p3.append(`${meLoremIpsum.about.paragraphThree}`);
+
+  let p4 = document.createElement('div');
+  p4.setAttribute('class', 'intro-paragraph');
+  p4.append(`${meLoremIpsum.about.paragraphFour}`);
+
+  mainContent.appendChild(p1);
+  mainContent.appendChild(p2);
+  mainContent.appendChild(p3);
+  mainContent.appendChild(p4);
+
+  return mainContent;
+}
+
 function renderFooter() {
   let footer = document.createElement('div');
-  footer.setAttribute("id", "footer");
+  footer.setAttribute('id', 'footer');
 
   let sourceCodeLink = createSourceCodeLink();
 
