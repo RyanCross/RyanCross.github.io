@@ -43,6 +43,25 @@ headerLabels = {
   games: "Games"
 }
 
+imgs = {
+  london: {
+    path: "src/img/london.jpg",
+    alt: "A selfie of Ryan at the London Globe theatre on a rainy day",
+  },
+  gaming: {
+    path: "src/img/gaming.jpg",
+    alt: "Ryan at a local Kansas City Lan Event; he's making a very disturbing face at the camera",
+  },
+  catman: {
+    path: "src/img/catman.jpg",
+    alt: "Ryan posing with a cat mask on head; photo taken at a local gift shop in Amsterdam",
+  },
+  telephone: {
+    path: "src/img/telephone.jpg",
+    alt: "Ryan using an old school London-esque telephone booth to make a very important phone call",
+  }
+}
+
 function renderBody() {
   // creates a new body and overide what's in index.html
   let htmlBody = document.createElement('body');
@@ -53,7 +72,7 @@ function renderBody() {
   fullNameTitle.append(`${me.basics.firstName} ${me.basics.lastName}`);
   
   htmlBody.appendChild(renderHeader());
-  htmlBody.appendChild(renderMainContent());
+  htmlBody.appendChild(renderPageContent());
   htmlBody.appendChild(renderFooter());
 }
 
@@ -76,9 +95,9 @@ function renderHeader() {
   return header;
 }
 
-function renderMainContent() {
+function renderPageContent() {
   let mainContent = document.createElement('div');
-  mainContent.setAttribute('id', 'main-content');
+  mainContent.setAttribute('id', 'page-content');
 
   let p1 = document.createElement('div');
   p1.setAttribute('class', 'intro-paragraph');
@@ -101,7 +120,37 @@ function renderMainContent() {
   mainContent.appendChild(p3);
   mainContent.appendChild(p4);
 
+  mainContent.appendChild(renderPhotoGallery())
+
   return mainContent;
+}
+
+function renderPhotoGallery() {
+  let gallery = document.createElement('div');
+  gallery.setAttribute('id', 'gallery');
+
+  let londonPhoto = document.createElement('img');
+  londonPhoto.setAttribute('src', `${imgs.london.path}`);
+  londonPhoto.setAttribute('alt', `${imgs.london.alt}`);
+
+  let gamingPhoto = document.createElement('img');
+  gamingPhoto.setAttribute('src', `${imgs.gaming.path}`);
+  gamingPhoto.setAttribute('alt', `${imgs.gaming.alt}`);
+
+  let catmanPhoto = document.createElement('img');
+  catmanPhoto.setAttribute('src', `${imgs.catman.path}`);
+  catmanPhoto.setAttribute('alt', `${imgs.catman.alt}`);
+
+  let telephonePhoto = document.createElement('img');
+  telephonePhoto.setAttribute('src', `${imgs.telephone.path}`);
+  telephonePhoto.setAttribute('alt', `${imgs.telephone.alt}`);
+
+  gallery.appendChild(londonPhoto);
+  gallery.appendChild(gamingPhoto);
+  gallery.appendChild(catmanPhoto);
+  gallery.appendChild(telephonePhoto);
+
+  return gallery;
 }
 
 function renderFooter() {
