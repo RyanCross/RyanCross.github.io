@@ -22,22 +22,32 @@ body {
   color: #1A1A1A;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+  margin:0px;
 }
 
 #nav {
   background: #DFDFDF;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 #nav-home {
   color: #1A1A1A;
   font-family: 'Sawarabi Mincho', sans-serif;
+  font-weight: bold;
 }
 
 .nav-item {
-  margin: 20px;
-  padding: 5px;
+  margin-right: 20px;
   color: #2980B9;
-  font-family: 'Sawarabi Gothic';
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+#footer {
+  margin-top: 20px;
+  background: #DFDFDF;
+  font-size: 8px;
+  padding: 10px, 10px, 15px, 15px;
 }
 
 img {

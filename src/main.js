@@ -20,7 +20,7 @@ me = {
     "paragraphFour": "If your interested in learning more about my industry work, head on over to my resume. For my passion projects, check out the projects page."
   },
   "copyright": {
-    "disclaimer": "Contents of this site are © Copyright 2019-2020 Ryan Cross. All rights reserved. ",
+    "disclaimer": "Contents of this site are © Copyright 2019-{0} Ryan Cross. All rights reserved. ",
     "github": "https://github.com/RyanCross/ryancross.github.io",
     "linkText": "Source",
     "licenseInfo": " code is available under the MIT license."
@@ -63,6 +63,7 @@ imgs = {
 }
 
 function renderBody() {
+  formatCopyRightString();
   // creates a new body and overide what's in index.html
   let htmlBody = document.createElement('body');
   document.body = htmlBody;
@@ -108,32 +109,59 @@ function renderHeader() {
 
 function renderPageContent() {
   let mainContent = document.createElement('div');
-  mainContent.setAttribute('id', 'page-content');
+  mainContent.setAttribute('id', 'main-content');
+
+  mainContent.appendChild(renderTitleCard());
+  mainContent.appendChild(renderAboutInfo());
+  mainContent.appendChild(renderPhotoGallery());
+
+  return mainContent;
+}
+
+function renderAboutInfo() {
+  let aboutInfo = document.createElement('div');
+  aboutInfo.setAttribute('id', 'about');
 
   let p1 = document.createElement('div');
-  p1.setAttribute('class', 'intro-paragraph');
+  p1.setAttribute('class', 'about-paragraph');
   p1.append(`${meLoremIpsum.about.paragraphOne}`);
 
   let p2 = document.createElement('div');
-  p2.setAttribute('class', 'intro-paragraph');
+  p2.setAttribute('class', 'about-paragraph');
   p2.append(`${meLoremIpsum.about.paragraphTwo}`);
 
   let p3 = document.createElement('div');
-  p3.setAttribute('class', 'intro-paragraph');
+  p3.setAttribute('class', 'about-paragraph');
   p3.append(`${meLoremIpsum.about.paragraphThree}`);
 
   let p4 = document.createElement('div');
-  p4.setAttribute('class', 'intro-paragraph');
+  p4.setAttribute('class', 'about-paragraph');
   p4.append(`${meLoremIpsum.about.paragraphFour}`);
 
-  mainContent.appendChild(p1);
-  mainContent.appendChild(p2);
-  mainContent.appendChild(p3);
-  mainContent.appendChild(p4);
+  aboutInfo.appendChild(p1);
+  aboutInfo.appendChild(p2);
+  aboutInfo.appendChild(p3);
+  aboutInfo.appendChild(p4);
 
-  mainContent.appendChild(renderPhotoGallery())
+  return aboutInfo;
+}
 
-  return mainContent;
+function renderTitleCard() {
+  let titleCard = document.createElement('div');
+  titleCard.setAttribute('id', 'title-card');
+
+  let fullName = document.createElement('div');
+  fullName.setAttribute('id', 'full-name');
+  fullName.append(`${me.basics.firstName} ${me.basics.lastName}`);
+
+  let title = document.createElement('div');
+  title.setAttribute('id', 'title-label');
+  title.append(`${me.basics.label}`);
+
+  titleCard.appendChild(fullName);
+  titleCard.appendChild(title);
+
+  return titleCard;
 }
 
 function renderPhotoGallery() {
@@ -190,6 +218,15 @@ function createSourceCodeLink() {
   sourceCodeLink.append(`${me.copyright.linkText}`);
   
   return sourceCodeLink;
+}
+
+/**
+ * Gets the current year and formats the copyright string with it so I never have to update this text manually ever.
+ */
+function formatCopyRightString() {
+  let today = new Date();
+  const currentYear = today.getFullYear().toString();
+  me.copyright.disclaimer = me.copyright.disclaimer.replace("{0}", currentYear);
 }
 
 document.body.onload = renderBody();
