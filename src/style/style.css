@@ -26,14 +26,13 @@ body {
 }
 
 #nav {
-  background: #DFDFDF;
-  margin-bottom: 20px;
+  background: #F9F9F9;
   padding: 10px;
 }
 
 #nav-home {
   color: #1A1A1A;
-  font-family: 'Sawarabi Mincho', sans-serif;
+  font-family: 'Sawarabi Gothic', sans-serif;
   font-weight: bold;
 }
 
@@ -43,21 +42,39 @@ body {
   font-family: 'Sawarabi Gothic', sans-serif;
 }
 
+#title-card {
+  background: #2980B9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 250px;
+  align-items: center;
+  text-align:center;
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+#full-name {
+  font-size: 72px;
+  color: #F9F9F9;
+}
+
+#title-label {
+  font-size: 24px;
+  color: #F9F9F9;
+}
+
+.gallery-item {
+  margin: 20px;
+}
+
 #footer {
   margin-top: 20px;
-  background: #DFDFDF;
+  background: #F9F9F9;
   font-size: 8px;
   padding: 10px, 10px, 15px, 15px;
+  margin-bottom: s;
 }
 
 img {
   width: 200px;
   height: 250px;
-}
-
-/* ignore this for now, this will be a sky gradient */
-background {
-  background: #2980B9;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

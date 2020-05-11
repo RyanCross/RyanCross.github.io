@@ -92,7 +92,6 @@ function renderHeader() {
   let navBarElements = [];
   for(label in nav) {
     element = document.createElement('span');
-    element.setAttribute('class', 'nav-btn');
     element.setAttribute('class', 'nav-item');
     element.setAttribute('id', `${nav[label]}`);
     element.append(`${nav[label]}`);
@@ -169,18 +168,22 @@ function renderPhotoGallery() {
   gallery.setAttribute('id', 'gallery');
 
   let londonPhoto = document.createElement('img');
+  londonPhoto.setAttribute('class', `gallery-item`);
   londonPhoto.setAttribute('src', `${imgs.london.path}`);
   londonPhoto.setAttribute('alt', `${imgs.london.alt}`);
 
   let gamingPhoto = document.createElement('img');
+  gamingPhoto.setAttribute('class', `gallery-item`);
   gamingPhoto.setAttribute('src', `${imgs.gaming.path}`);
   gamingPhoto.setAttribute('alt', `${imgs.gaming.alt}`);
 
   let catmanPhoto = document.createElement('img');
+  catmanPhoto.setAttribute('class', `gallery-item`);
   catmanPhoto.setAttribute('src', `${imgs.catman.path}`);
   catmanPhoto.setAttribute('alt', `${imgs.catman.alt}`);
 
   let telephonePhoto = document.createElement('img');
+  telephonePhoto.setAttribute('class', `gallery-item`);
   telephonePhoto.setAttribute('src', `${imgs.telephone.path}`);
   telephonePhoto.setAttribute('alt', `${imgs.telephone.alt}`);
 
