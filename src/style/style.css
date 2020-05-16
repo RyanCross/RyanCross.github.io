@@ -43,9 +43,9 @@ body {
 }
 
 #title-card {
-  background: #2980B9;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #6DD5FA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #022F40);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FFFFFF, #6DD5FA, #022F40); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 250px;
   align-items: center;
   text-align:center;
@@ -74,7 +74,31 @@ body {
   margin-bottom: s;
 }
 
+
 img {
-  width: 200px;
-  height: 250px;
+  width: 20%;
+  height: auto;
 }
+
+.gallery-item {
+  margin: auto;
+}
+
+#about, #gallery {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#gallery {
+ display: flex;
+ justify-content: center;
+}
+
+
+
+
+#about > p {
+  margin-bottom: 25px;
+}
+
+

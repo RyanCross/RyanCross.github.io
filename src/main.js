@@ -59,6 +59,14 @@ imgs = {
   telephone: {
     path: "src/img/telephone.jpg",
     alt: "Ryan using an old school London-esque telephone booth to make a very important phone call",
+  },
+  sunset: {
+    path: "src/img/mountain-sunset.jpg",
+    alt: "A picture of Ryan and his partner Chelcie overlooking a beautiful colorado mountain view",
+  },
+  cosplay: {
+    path: "src/img/cosplay.jpg",
+    alt: "Ryan (pictured as Reaper) and friends cosplaying as several Overwatch characters",
   }
 }
 
@@ -91,7 +99,7 @@ function renderHeader() {
 
   let navBarElements = [];
   for(label in nav) {
-    element = document.createElement('span');
+    element = document.createElement('a');
     element.setAttribute('class', 'nav-item');
     element.setAttribute('id', `${nav[label]}`);
     element.append(`${nav[label]}`);
@@ -121,19 +129,19 @@ function renderAboutInfo() {
   let aboutInfo = document.createElement('div');
   aboutInfo.setAttribute('id', 'about');
 
-  let p1 = document.createElement('div');
+  let p1 = document.createElement('p');
   p1.setAttribute('class', 'about-paragraph');
   p1.append(`${meLoremIpsum.about.paragraphOne}`);
 
-  let p2 = document.createElement('div');
+  let p2 = document.createElement('p');
   p2.setAttribute('class', 'about-paragraph');
   p2.append(`${meLoremIpsum.about.paragraphTwo}`);
 
-  let p3 = document.createElement('div');
+  let p3 = document.createElement('p');
   p3.setAttribute('class', 'about-paragraph');
   p3.append(`${meLoremIpsum.about.paragraphThree}`);
 
-  let p4 = document.createElement('div');
+  let p4 = document.createElement('p');
   p4.setAttribute('class', 'about-paragraph');
   p4.append(`${meLoremIpsum.about.paragraphFour}`);
 
@@ -187,10 +195,25 @@ function renderPhotoGallery() {
   telephonePhoto.setAttribute('src', `${imgs.telephone.path}`);
   telephonePhoto.setAttribute('alt', `${imgs.telephone.alt}`);
 
+  let sunsetPhoto = document.createElement('img');
+  sunsetPhoto.setAttribute('class', `gallery-item`);
+  sunsetPhoto.setAttribute('src', `${imgs.sunset.path}`);
+  sunsetPhoto.setAttribute('alt', `${imgs.sunset.alt}`);
+
+  let cosplayPhoto = document.createElement('img');
+  cosplayPhoto.setAttribute('class', `gallery-item`);
+  cosplayPhoto.setAttribute('src', `${imgs.cosplay.path}`);
+  cosplayPhoto.setAttribute('alt', `${imgs.cosplay.alt}`);
+
   gallery.appendChild(londonPhoto);
   gallery.appendChild(gamingPhoto);
-  gallery.appendChild(catmanPhoto);
   gallery.appendChild(telephonePhoto);
+  gallery.appendChild(cosplayPhoto);
+
+  // TODO not sure if I want these
+  // gallery.appendChild(sunsetPhoto);
+  // gallery.appendChild(cosplayPhoto);
+  //gallery.appendChild(catmanPhoto);
 
   return gallery;
 }
